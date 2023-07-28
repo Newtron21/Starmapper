@@ -1,15 +1,23 @@
 const astronomyAuthString = btoa(`${"32d837ef-625e-4b2d-8c13-596f6eb6bde7"}:${"acaf3f84f656033f32b1704c9520ef426455c6f8253ebfc6a5faf58da5c0284ef74af676df0d420af538a1f1e816b0327145896c2f4c1f3baf87a25bc3dd5b608914c9c954a80a26d719b1a59f67fb0360cf804733c8911619be7198b1e6784e967bc084a2699dd837c268406ec08d28"}`);
-//var latitude=latitude
-//var longitude=longitude
-//var date=date
-//var starImage=returned star image
-
+var latitude=latitude
+var longitude=longitude
+var date=date
+var starImage='returned star image'
+var currentDay = dayjs().format('YYYY-MM-D');
+$('#currentDay').text(currentDay);
+//Jeremy to change the time/day format
+console.log(currentDay);
+var starImageLocation = $('#starImage');
+var submitBtn =$('#submitButton'); 
+var userInput =$('.userInput');
+var savedSearches = $('.savedSearches');
+var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
+var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
 
 
 
 //TASK TO DO FIRST SUBMIT
 //have variable that contains current date
-//var date=date
 //event listener to listen for submit
 //---when submit insert loading bar 
 //take submit info turn into variable
