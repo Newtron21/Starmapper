@@ -17,24 +17,45 @@ var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1Si
 var storageSave=[];
 
 
+function getSearches() {
+     //check if our storage array exists first
+     if (!localStorage.getItem("savedStorage")) {
+        localStorage.setItem("savedStorage", JSON.stringify(storageSave));
+    } else {
+        //adding something to end of array
+        storageSave=JSON.parse(localStorage.getItem("savedStorage"));
+    }
+    var displaySearches = "";
+    for (let i=0; i<storageSave.length; i++) {
+        displaySearches +="<li>" + storageSave[i] + "</li>";
+    }
+    console.log(displaySearches);
+    savedSearches.append(displaySearches);
+}
 
+getSearches();
 //TASK TO DO FIRST SUBMIT
 
 //event listener to listen for submit
 submitBtn.on("click", function(event){
     event.preventDefault();
     var userInfo=userInput.val();
-    console.log(userInfo);
     storageSave[0]=userInfo;
-    localStorage.setItem("savedStorage", JSON.stringify(storageSave));
-    storageSave=JSON.parse(localStorage.getItem("savedStorage"));
-    //adding something to end of array
-    storageSave.push(userInfo);
-    console.log("storage saved is "+storageSave);
-    console.log(storageSave);
-
-    
-
+    //check if our storage array exists first
+    if (!localStorage.getItem("savedStorage")) {
+        localStorage.setItem("savedStorage", JSON.stringify(storageSave));
+    } else {
+        //adding something to end of array
+        storageSave=JSON.parse(localStorage.getItem("savedStorage"));
+        storageSave.push(userInfo);
+        localStorage.setItem("savedStorage", JSON.stringify(storageSave));
+    }
+    var displaySearches = "";
+    for (let i=0; i<storageSave.length; i++) {
+        displaySearches +="<li>" + storageSave[i] + "</li>";
+    }
+    console.log(displaySearches);
+    savedSearches.append(displaySearches);
 })
 //---when submit insert loading bar 
 //take submit info turn into variable
