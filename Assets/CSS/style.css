@@ -20,7 +20,18 @@ font size
 loading bar */
 
 .submitBox {
-    color:white;
+    color: white;
 }
 
+.padding {
+    padding: 20px;
+    margin: 10px;
+}
 
+.submitArea {
+    background-color: blueviolet;
+}
+
+.pictureArea {
+    background-color: blue;
+}
