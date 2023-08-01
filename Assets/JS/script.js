@@ -59,16 +59,64 @@ submitBtn.on("click", function(event){
     }
     console.log(displaySearches);
     savedSearches.append(displaySearches);
+    
+    //TASK 3 fetch request through mapquest with said variables 
+    //take variable run through mapquest fetch 
+    // fetch first time through mapquest
+    //put in location/city and get out lat and long
+    function getAPI() {
+        var APIUrl = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k&location=' + userInfo;
+
+        fetch(APIUrl)
+            .then(function (response) {
+            console.log(response.status)
+            return response.json();
+            })
+            .then(function (data) {
+                console.log(data)
+                var latitude = data.results[0].locations[0].displayLatLng.lat
+                var longitude = data.results[0].locations[0].displayLatLng.lng
+                console.log(latitude, longitude)
+
+                //next fetch
+                repDataArea.observer.latitude = latitude;
+                repDataArea.observer.longitude = longitude;
+
+                //this works!!!!!
+fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", {
+    method: "POST",
+    body: JSON.stringify(repDataArea),
+    headers: {
+        Authorization: `Basic ${astronomyAuthString}` 
+}})
+.then(function (response) {
+    console.log(response.status)
+    return response.json();
 })
+.then(function (data) {
+    let pictureLink;
+    console.log(data);
+    pictureLink = data;
+    pictureLink = pictureLink.data.imageUrl;
+    console.log(pictureLink);
+    
+})
+
+            }
+                )
+
+            }
+    
+        
+       getAPI();
+    })
 //---when submit insert loading bar 
 //take submit info turn into variable
 
  
 
-//TASK 3 fetch request through mapquest with said variables 
-//take variable run through mapquest fetch 
-// fetch first time through mapquest 
-//put in location/city and get out lat and long
+
+ 
 //creates new variable that contains latitude and longitude
 //var latitude=latitude
 //var longitude=longitude
@@ -82,7 +130,7 @@ submitBtn.on("click", function(event){
 //var starImage=returned star image
 const repData = {
     observer: {
-        date:"2023-07-25",
+        date: currentDay,
         latitude: 33.775867,
         longitude: -84.39733
     },
@@ -97,7 +145,7 @@ const repData = {
 
 const repDataArea = {
     observer: {
-        date:"2023-07-25",
+        date: currentDay,
         latitude: 40.665907,
         longitude: -111.912589
     },
@@ -119,25 +167,7 @@ const repDataArea = {
 }
 
 
-//this works!!!!!
-fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", {
-    method: "POST",
-    body: JSON.stringify(repData),
-    headers: {
-        Authorization: `Basic ${astronomyAuthString}` 
-}})
-.then(function (response) {
-    console.log(response.status)
-    return response.json();
-})
-.then(function (data) {
-    let pictureLink;
-    console.log(data);
-    pictureLink = data;
-    pictureLink = pictureLink.data.imageUrl;
-    console.log(pictureLink);
-    
-})
+
 //TASK 5 
 //get rid of "hidden" on image class to show image
 //put image into page in specific spot 
