@@ -3,6 +3,7 @@ var latitude=latitude
 var longitude=longitude
 var date=date
 var starImage='returned star image'
+//have variable that contains current date
 var currentDay = dayjs().format('YYYY-MM-D');
 $('#currentDay').text(currentDay);
 //Jeremy to change the time/day format
@@ -17,8 +18,13 @@ var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1Si
 
 
 //TASK TO DO FIRST SUBMIT
-//have variable that contains current date
+
 //event listener to listen for submit
+submitBtn.on("click", function(event){
+    event.preventDefault()
+    var userInfo=userInput.val()
+    console.log(userInfo)
+})
 //---when submit insert loading bar 
 //take submit info turn into variable
 
