@@ -40,6 +40,9 @@ getSearches();
 submitBtn.on("click", function(event){
     event.preventDefault();
     var userInfo=userInput.val();
+    //TASK 2 saving and rendering info
+    //save submit info into local storage and render them underneath submit bar
+    //make sure it saves to page when page is refreshed
     storageSave[0]=userInfo;
     //check if our storage array exists first
     if (!localStorage.getItem("savedStorage")) {
@@ -60,10 +63,7 @@ submitBtn.on("click", function(event){
 //---when submit insert loading bar 
 //take submit info turn into variable
 
-
-//TASK 2 saving and rendering info
-//save submit info into local storage and render them underneath submit bar
-//make sure it saves to page when page is refreshed 
+ 
 
 //TASK 3 fetch request through mapquest with said variables 
 //take variable run through mapquest fetch 
