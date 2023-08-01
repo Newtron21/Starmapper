@@ -18,39 +18,40 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </head>
   <body class="columns">
+    <!-- side section with a form fill (4 columns) -->
+    <!-- input city box with id to pull fetch location from (city or address) -->
+    <!-- place holder text would be "input city " -->
+    <!-- submit button -->
+    <!-- --possibly picking date -->
 
-<!-- side section with a form fill (4 columns) -->
-<!-- input city box with id to pull fetch location from (city or address) -->
-<!-- place holder text would be "input city " -->
-<!-- submit button -->
-<!-- --possibly picking date -->
- 
-    <section class="column is-4 submitArea padding"> 
+    <section class="column is-4 submitArea padding">
       <div>
-        <textarea class="userInput padding">Text Area</textarea>
+        <textarea
+          class="userInput padding"
+          placeholder="Input your address here"
+        ></textarea>
         <button id="submitButton">Button</button>
       </div>
-      <ul class="savedSearches padding">Previous Searches:</ul>
+      <ul class="savedSearches padding">
+        Previous Searches:
+      </ul>
     </section>
 
-  
-<!-- saved data / previous searches show up underneath the submit button  -->
-<!-- --click old data and see previous pictures -->
-<!-- main section (8 columns) -->
-<!-- large picture filling up frame of data we pulled through fetch request -->
-<!-- id for putting in the picture -->
-<!-- display status is hidden and has an image -->
+    <!-- saved data / previous searches show up underneath the submit button  -->
+    <!-- --click old data and see previous pictures -->
+    <!-- main section (8 columns) -->
+    <!-- large picture filling up frame of data we pulled through fetch request -->
+    <!-- id for putting in the picture -->
+    <!-- display status is hidden and has an image -->
     <section class="column is-8 pictureArea padding">
-        <div style="display: hidden">
-          <img id="starImage" src="">
-        </div>
-      </section>
-<!--loading bar -->
-<!-- ---underneath picture we put 2 or 3 columns that have moon/planet/sun weather pulled from that -->
-<!-- ---same location and date-->
-
-
-
+      <div class="pictureHolder" style="display: none">
+        <p class="loading">LOADING...</p>
+        <img id="starImage" src="./Assets/Image/loading-orange.gif" />
+      </div>
+    </section>
+    <!--loading bar -->
+    <!-- ---underneath picture we put 2 or 3 columns that have moon/planet/sun weather pulled from that -->
+    <!-- ---same location and date-->
   </body>
   <script src="./Assets/JS/script.js"></script>
 </html>

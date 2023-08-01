@@ -2,7 +2,7 @@ const astronomyAuthString = btoa(`${"32d837ef-625e-4b2d-8c13-596f6eb6bde7"}:${"a
 var latitude=latitude
 var longitude=longitude
 var date=date
-var starImage='returned star image'
+var starImage=document.querySelector('#starImage');
 //have variable that contains current date
 var currentDay = dayjs().format('YYYY-MM-D');
 $('#currentDay').text(currentDay);
@@ -12,9 +12,13 @@ var starImageLocation = $('#starImage');
 var submitBtn =$('#submitButton'); 
 var userInput =$('.userInput');
 var savedSearches = $('.savedSearches');
+var pictureArea = $('.pictureArea');
+var pictureHolder= document.querySelector(".pictureHolder");
+var loading= document.querySelector(".loading");
 var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
 var storageSave=[];
+
 
 
 function getSearches() {
@@ -59,6 +63,15 @@ submitBtn.on("click", function(event){
     }
     console.log(displaySearches);
     savedSearches.append(displaySearches);
+    pictureHolder.setAttribute("style", "display:block");
+
+
+
+
+
+
+
+
     
     //TASK 3 fetch request through mapquest with said variables 
     //take variable run through mapquest fetch 
@@ -99,7 +112,10 @@ fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", {
     pictureLink = data;
     pictureLink = pictureLink.data.imageUrl;
     console.log(pictureLink);
+
+    starImage.setAttribute("src", pictureLink);
     
+    loading.setAttribute("style", "display:none");
 })
 
             }
@@ -139,6 +155,8 @@ const repData = {
         type: "constellation",
         parameters: {
             constellation: "ori"
+            //put an array of all constellations 
+            //randomize them 
         }
     }
 }
