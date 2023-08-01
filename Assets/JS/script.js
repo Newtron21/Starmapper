@@ -14,6 +14,7 @@ var userInput =$('.userInput');
 var savedSearches = $('.savedSearches');
 var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
+var storageSave=[];
 
 
 
@@ -21,9 +22,19 @@ var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1Si
 
 //event listener to listen for submit
 submitBtn.on("click", function(event){
-    event.preventDefault()
-    var userInfo=userInput.val()
-    console.log(userInfo)
+    event.preventDefault();
+    var userInfo=userInput.val();
+    console.log(userInfo);
+    storageSave[0]=userInfo;
+    localStorage.setItem("savedStorage", JSON.stringify(storageSave));
+    storageSave=JSON.parse(localStorage.getItem("savedStorage"));
+    //adding something to end of array
+    storageSave.push(userInfo);
+    console.log("storage saved is "+storageSave);
+    console.log(storageSave);
+
+    
+
 })
 //---when submit insert loading bar 
 //take submit info turn into variable
