@@ -67,8 +67,11 @@ submitBtn.on("click", function(event){
     pictureHolder.setAttribute("style", "display:block");
 
 
-
-
+        function randomNumber(){
+            var randomNumber=Math.floor(Math.random(starArray.length))
+            starArray=starArray[randomNumber]
+        }
+        randomNumber()
 
 
 
@@ -93,13 +96,13 @@ submitBtn.on("click", function(event){
                 console.log(latitude, longitude)
 
                 //next fetch
-                repDataArea.observer.latitude = latitude;
-                repDataArea.observer.longitude = longitude;
-
+                repData.observer.latitude = latitude;
+                repData.observer.longitude = longitude;
+                repData.view.parameters.constellation = starArray;
                 //this works!!!!!
 fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", {
     method: "POST",
-    body: JSON.stringify(repDataArea),
+    body: JSON.stringify(repData),
     headers: {
         Authorization: `Basic ${astronomyAuthString}` 
 }})
