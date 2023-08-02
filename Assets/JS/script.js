@@ -36,6 +36,7 @@ function getSearches() {
     }
     console.log(displaySearches);
     savedSearches.append(displaySearches);
+    $("li").attr("class", "listItems");
 }
 
 getSearches();
@@ -63,13 +64,15 @@ submitBtn.on("click", function(event){
         displaySearches +="<li>" + storageSave[i] + "</li>";
     }
     console.log(displaySearches);
+    $(".listItems").remove();
     savedSearches.append(displaySearches);
+    $("li").attr("class", "listItems");
     pictureHolder.setAttribute("style", "display:block");
 
 
        
     function randomNumber(){
-        var randomNumber=Math.floor(Math.random(starArray.length))
+        var randomNumber=Math.floor(Math.random()*starArray.length);
         starRandom=starArray[randomNumber]
     }
     randomNumber()
