@@ -4,7 +4,7 @@ var longitude=longitude
 var date=date
 var starImage=document.querySelector('#starImage');
 //have variable that contains current date
-var currentDay = dayjs().format('YYYY-MM-D');
+var currentDay = dayjs().format('YYYY-MM-DD');
 $('#currentDay').text(currentDay);
 //Jeremy to change the time/day format
 console.log(currentDay);
@@ -18,6 +18,7 @@ var loading= document.querySelector(".loading");
 var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
 var storageSave=[];
+var starArray = ["and", "ant", "apu", "aqu", "ari", "aur", "boo", "cae", "cam", "can", "cap", "car", "cas", "cen", "cep", "cet", "cha", "cir", "col", "com", "cor", "car", "cru", "cyg", "del", "dor", "dra", "equ", "eri", "for", "gem", "gru", "her", "hor", "hyd", "lac", "leo", "lib", "lup", "lyn", "lyr", "men", "mic", "mon", "mus", "nor", "oct", "oph", "ori", "pav", "peg", "per", "pho", "pis", "pic", "pup", "pyx", "ret", "sag", "sco", "scu", "sex", "tau", "tel", "tri", "tuc", "vel", "vir", "vol", "vul"];
 
 
 
