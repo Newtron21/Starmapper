@@ -72,7 +72,7 @@ submitBtn.on("click", function(event){
 
        
     function randomNumber(){
-        var randomNumber=Math.floor(Math.random(starArray.length))
+        var randomNumber=Math.floor(Math.random()*starArray.length);
         starRandom=starArray[randomNumber]
     }
     randomNumber()
