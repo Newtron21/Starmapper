@@ -19,7 +19,7 @@ var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
 var storageSave=[];
 var starArray = ["and", "ant", "apu", "aqu", "ari", "aur", "boo", "cae", "cam", "can", "cap", "car", "cas", "cen", "cep", "cet", "cha", "cir", "col", "com", "cor", "car", "cru", "cyg", "del", "dor", "dra", "equ", "eri", "for", "gem", "gru", "her", "hor", "hyd", "lac", "leo", "lib", "lup", "lyn", "lyr", "men", "mic", "mon", "mus", "nor", "oct", "oph", "ori", "pav", "peg", "per", "pho", "pis", "pic", "pup", "pyx", "ret", "sag", "sco", "scu", "sex", "tau", "tel", "tri", "tuc", "vel", "vir", "vol", "vul"];
-
+var starRandom=[];
 
 
 function getSearches() {
@@ -67,12 +67,12 @@ submitBtn.on("click", function(event){
     pictureHolder.setAttribute("style", "display:block");
 
 
-        function randomNumber(){
-            var randomNumber=Math.floor(Math.random(starArray.length))
-            starArray=starArray[randomNumber]
-        }
-        randomNumber()
-
+       
+    function randomNumber(){
+        var randomNumber=Math.floor(Math.random(starArray.length))
+        starRandom=starArray[randomNumber]
+    }
+    randomNumber()
 
 
 
@@ -98,7 +98,8 @@ submitBtn.on("click", function(event){
                 //next fetch
                 repData.observer.latitude = latitude;
                 repData.observer.longitude = longitude;
-                repData.view.parameters.constellation = starArray;
+                
+                repData.view.parameters.constellation = starRandom;
                 //this works!!!!!
 fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", {
     method: "POST",
