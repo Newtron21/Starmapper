@@ -36,6 +36,7 @@ function getSearches() {
     }
     console.log(displaySearches);
     savedSearches.append(displaySearches);
+    $("li").attr("class", "listItems");
 }
 
 getSearches();
@@ -63,7 +64,9 @@ submitBtn.on("click", function(event){
         displaySearches +="<li>" + storageSave[i] + "</li>";
     }
     console.log(displaySearches);
+    $(".listItems").remove();
     savedSearches.append(displaySearches);
+    $("li").attr("class", "listItems");
     pictureHolder.setAttribute("style", "display:block");
 
 
