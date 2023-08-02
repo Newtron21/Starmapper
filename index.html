@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="./Assets/CSS/style.css" />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
-    ></script>
-    <title>Starmapper</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  </head>
-  <body class="columns">
-    <!-- side section with a form fill (4 columns) -->
-    <!-- input city box with id to pull fetch location from (city or address) -->
-    <!-- place holder text would be "input city " -->
-    <!-- submit button -->
-    <!-- --possibly picking date -->
 
-    <section class="column is-4 submitArea padding">
-      <div>
-        <textarea
-          class="userInput padding"
-          placeholder="Input your address here"
-        ></textarea>
-        <button id="submitButton">Button</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+  <link rel="stylesheet" href="./Assets/CSS/style.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <title>Starmapper</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+
+<body>
+  <!-- side section with a form fill (4 columns) -->
+  <!-- input city box with id to pull fetch location from (city or address) -->
+  <!-- place holder text would be "input city " -->
+  <!-- submit button -->
+  <!-- --possibly picking date -->
+  
+  <section class="hero is-link">
+    <div class="flex align-c hero-body">
+      <p class="title">
+        STARMAPPER
+      </p>
+      
+    </div>
+  </section>
+
+
+  <div class="columns">
+    <div class="flex column is-3 submitArea padding">
+      <div class="">
+        <textarea class="userInput padding" placeholder="Input your address here"></textarea>
+
       </div>
+      <button class="btn" id="submitButton">Submit</button>
       <ul class="savedSearches padding">
         Previous Searches:
       </ul>
-    </section>
-
+    </div>
+  
     <!-- saved data / previous searches show up underneath the submit button  -->
     <!-- --click old data and see previous pictures -->
     <!-- main section (8 columns) -->
     <!-- large picture filling up frame of data we pulled through fetch request -->
     <!-- id for putting in the picture -->
     <!-- display status is hidden and has an image -->
-    <section class="column is-8 pictureArea padding">
+    <div class="column is-9 pictureArea padding">
       <div class="pictureHolder" style="display: none">
         <p class="loading">LOADING...</p>
         <img id="starImage" src="./Assets/Image/loading-orange.gif" />
       </div>
-    </section>
-    <!--loading bar -->
-    <!-- ---underneath picture we put 2 or 3 columns that have moon/planet/sun weather pulled from that -->
-    <!-- ---same location and date-->
-  </body>
-  <script src="./Assets/JS/script.js"></script>
+    </div>
+  </div>
+  <!--loading bar -->
+  <!-- ---underneath picture we put 2 or 3 columns that have moon/planet/sun weather pulled from that -->
+  <!-- ---same location and date-->
+</body>
+<script src="./Assets/JS/script.js"></script>
+
 </html>
