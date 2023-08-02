@@ -4,7 +4,7 @@ var longitude=longitude
 var date=date
 var starImage=document.querySelector('#starImage');
 //have variable that contains current date
-var currentDay = dayjs().format('YYYY-MM-D');
+var currentDay = dayjs().format('YYYY-MM-DD');
 $('#currentDay').text(currentDay);
 //Jeremy to change the time/day format
 console.log(currentDay);
