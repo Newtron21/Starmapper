@@ -69,6 +69,7 @@ submitBtn.on("click", function(event){
     $("li").attr("class", "listItems");
     pictureHolder.setAttribute("style", "display:block");
 
+    starImage.setAttribute("src", "./Assets/Image/loading-orange.gif");
 
        
     function randomNumber(){
