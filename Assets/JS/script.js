@@ -18,7 +18,7 @@ var loading= document.querySelector(".loading");
 var starAPI = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1SiFEnupI0fPbbOYGHec2k';
 var storageSave=[];
-var starArray = ["and", "ant", "apu", "aqu", "ari", "aur", "boo", "cae", "cam", "can", "cap", "car", "cas", "cen", "cep", "cet", "cha", "cir", "col", "com", "cor", "car", "cru", "cyg", "del", "dor", "dra", "equ", "eri", "for", "gem", "gru", "her", "hor", "hyd", "lac", "leo", "lib", "lup", "lyn", "lyr", "men", "mic", "mon", "mus", "nor", "oct", "oph", "ori", "pav", "peg", "per", "pho", "pis", "pic", "pup", "pyx", "ret", "sag", "sco", "scu", "sex", "tau", "tel", "tri", "tuc", "vel", "vir", "vol", "vul"];
+var starArray = ["and", "ant", "aps", "aqr", "aql", "ara", "ari", "aur", "boo", "cae", "cam", "cnc", "cvn", "cma", "cmi", "cap", "cas", "cen", "cep", "cet", "cha", "cir", "col", "com", "cra", "crt", "cru", "cyg", "del", "dor", "dra", "equ", "eri", "for", "gem", "gru", "her", "hor", "hya", "lac", "leo", "lib", "lup", "lyn", "lyr", "men", "mic", "mon", "mus", "nor", "oct", "oph", "ori", "pav", "peg", "per", "phe", "pis", "pic", "psc", "psa", "pup", "pyx", "ret", "sge", "sgr", "sco", "sct", "sex", "tau", "tel", "tra", "tri", "tuc", "uma", "umi", "vel", "vir", "vol", "Vul"];
 var starRandom=[];
 
 
