@@ -20,7 +20,7 @@ var mapAPI = 'https://www.mapquestapi.com/geocoding/v1/address?key=49BbAeOOhO1Si
 var storageSave=[];
 var starArray = ["and", "ant", "aps", "aqr", "aql", "ara", "ari", "aur", "boo", "cae", "cam", "cnc", "cvn", "cma", "cmi", "cap", "cas", "cen", "cep", "cet", "cha", "cir", "col", "com", "cra", "crt", "cru", "cyg", "del", "dor", "dra", "equ", "eri", "for", "gem", "gru", "her", "hor", "hya", "lac", "leo", "lib", "lup", "lyn", "lyr", "men", "mic", "mon", "mus", "nor", "oct", "oph", "ori", "pav", "peg", "per", "phe", "pis", "pic", "psc", "psa", "pup", "pyx", "ret", "sge", "sgr", "sco", "sct", "sex", "tau", "tel", "tra", "tri", "tuc", "uma", "umi", "vel", "vir", "vol", "Vul"];
 var starRandom=[];
-
+var inputLocation=document.querySelector(".inputLocation")
 
 function getSearches() {
      //check if our storage array exists first
@@ -98,7 +98,7 @@ submitBtn.on("click", function(event){
                 var latitude = data.results[0].locations[0].displayLatLng.lat
                 var longitude = data.results[0].locations[0].displayLatLng.lng
                 console.log(latitude, longitude)
-
+                inputLocation.textContent="coordinates: "+latitude+", "+longitude
                 //next fetch
                 repData.observer.latitude = latitude;
                 repData.observer.longitude = longitude;
