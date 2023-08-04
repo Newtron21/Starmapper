@@ -23,7 +23,7 @@ body{
     background-color:  rgb(35, 35, 38);
     /*display: flex;*/
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 15px;
     background-image: url("../Image/background-image.webp");
     background-size:cover
     
@@ -99,4 +99,17 @@ body{
 .hero.is-link {
     background-color: hsl(240, 48%, 33%);
     color: #fff;
+}
+
+@media (max-width: 690px) {
+    .title {
+      font-size: 40px;
+      
+    }
+}
+
+@media (max-width: 690px) {
+    .submitArea {
+      height: 500px;
+    }
 }
