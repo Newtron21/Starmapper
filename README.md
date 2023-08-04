@@ -16,7 +16,7 @@ Provide a short description explaining the what, why, and how of your project. U
 Open up the webpage [webpage here](https://newtron21.github.io/Starmapper) and input your city/ address, click submit. Wait for server to return a constellation sky map. VOILA! you have a constellation image!
 
 ​Here is a screenshot of what the page looks like 
-![Screenshot][./assets/images/screenshot.jpg]
+![Alt text](./Assets/Image/screenshot.jpg)
 ​
 ## Credits
 
